@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  font-size: 62.5%;
+  /* 1 REM = 16px*/
+}
+
+html,
+body {
+  font-size: 1.6rem;
+}
+
+.section-1 {
+  margin: 0 auto;
+  width: 55rem;
+}
+
+.PO {
+  margin: 0 auto;
+  width: 37.4rem;
+  height: 32.4rem;
+  background-image: url(image/Simulador.png);
+}
+.section-1 textarea{
+  width: 15rem;
+  height: 8rem;
+  resize: none;
+}
+.preenchimento{
+  display: flex;
+  align-items: center;
+}
