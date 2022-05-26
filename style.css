@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family: Simulador;
-  src: url(fonte/RepetitionScrolling.ttf);
+  src: url(fonte/Simulador_1.ttf);
 }
 html,
 body {
@@ -27,11 +27,10 @@ body {
   color: #fff;
   font-family: Simulador;
   padding: 0.5rem 0rem 0rem 1rem;
-  font-size: 2rem;
+  font-size: 1.53rem;
   line-height: 1.85rem;
   letter-spacing: 0.1rem;
-  /*
-  word-spacing: 0.6rem;*/
+  word-spacing: 0.6rem;
 }
 .section-1 {
   margin: 0 auto;
