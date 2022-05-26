@@ -6,18 +6,47 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
   <title>Simulador Checklist</title>
 </head>
 
 <body>
+  <div id="LCD"></div>
   <div class="section-1">
     <div class="PO"></div>
     <hr>
     <div class="preenchimento">
-      <label for="">Texto:</label>
-      <textarea name="texto" id="pergunta" cols="16" rows="4" maxlength="48" required></textarea>
-      <label for="bloqueia">Bloqueia ?</label>
-      <input type="checkbox">
+      <div class="content-left">
+        <label for="linha1">Linha 1:</label>
+        <input type="text" name="linha1" maxlength="16" onkeyup='mudando()' required>
+        <br>
+        <label for="linha2">Linha 2:</label>
+        <input type="text" name="linha2" maxlength="16" onkeyup='mudando()'>
+        <br>
+        <label for="linha3">Linha 3:</label>
+        <input type="text" name="linha3" maxlength="16" onkeyup='mudando()'>
+      </div>
+<!------------------------------------------------------>
+      <div class="content-right">
+        <label for="bloqueia">Bloqueia ?</label>
+        <input type="checkbox" name="bloqueia">
+        <br>
+        <label for="modelo-maquina">Modelo Máq.:</label>
+        <input type="text" name="modelo-maquina" maxlength="48" required>
+        <br>
+        <label for="numero-inicio">Núm. Inicio:</label>
+        <input type="number" name="numero-inicio" maxlength="6" required>
+      </div>
+    </div>
+<!------------------------------------------------------>
+    <div class="comandos">
+      <button>Sel.Arquivo</button>
+      <button>Ad. Modelo</button>
+      <button onclick="adpergunta()">Ad. Pergunta</button>
+      <button>Exibir Lista</button>
+      <button>Salvar PO</button>
+      <button>Salvar Tela</button>
+      <button>Sel. Doc</button>
     </div>
   </div>
   <div class="checklist"></div>
