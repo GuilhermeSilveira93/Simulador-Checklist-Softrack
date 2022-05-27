@@ -10,46 +10,47 @@
   <title>Simulador Checklist</title>
 </head>
 
-<body>
-  <div id="LCD"></div>
+<body onload="carregar()">
+
   <div class="section-1">
-    <div class="PO"></div>
+    <div class="PO">
+      <div id="LCD"></div>
+    </div>
     <hr>
     <div class="preenchimento">
       <div class="content-left">
         <label for="linha1">Linha 1:</label>
-        <input type="text" name="linha1" maxlength="16" onkeyup='mudando()' required>
+        <input type="text" name="linha1" maxlength="16" onkeyup='pergunta()' placeholder="16 Caracteres" required>
         <br>
         <label for="linha2">Linha 2:</label>
-        <input type="text" name="linha2" maxlength="16" onkeyup='mudando()'>
+        <input type="text" name="linha2" maxlength="16" onkeyup='pergunta()' placeholder="16 Caracteres">
         <br>
         <label for="linha3">Linha 3:</label>
-        <input type="text" name="linha3" maxlength="16" onkeyup='mudando()'>
+        <input type="text" name="linha3" maxlength="16" onkeyup='pergunta()' placeholder="16 Caracteres">
       </div>
-<!------------------------------------------------------>
+      <!------------------------------------------------------>
       <div class="content-right">
         <label for="bloqueia">Bloqueia ?</label>
         <input type="checkbox" name="bloqueia">
         <br>
-        <label for="modelo-maquina">Modelo Máq.:</label>
-        <input type="text" name="modelo-maquina" maxlength="48" required>
-        <br>
-        <label for="numero-inicio">Núm. Inicio:</label>
-        <input type="number" name="numero-inicio" maxlength="6" required>
+        <label for="">Modelo Maq.</label>
+        <input type="text" id="novoModelo" name="novoModelo" />
+        <input type="button" id="btnAddModelo" name="btnAddModelo" value="+" />
+        <select id="modelo" name="modelo">
+          <option value="">Selecione um modelo</option>
+        </select>
       </div>
     </div>
-<!------------------------------------------------------>
+    <!------------------------------------------------------>
     <div class="comandos">
-      <button>Sel.Arquivo</button>
-      <button>Ad. Modelo</button>
-      <button onclick="adpergunta()">Ad. Pergunta</button>
-      <button>Exibir Lista</button>
-      <button>Salvar PO</button>
-      <button>Salvar Tela</button>
-      <button>Sel. Doc</button>
+      <button onclick="adicionarpergunta()">Adicionar Pergunta.</button>
     </div>
   </div>
-  <div class="checklist"></div>
+  <hr>
+  <div class="section-1">
+    <div id="checklist">
+    </div>
+  </div>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ body {
   font-size: 1.6rem;
 }
 #LCD{
-  position: absolute;
+  position: relative;
   left: 50%;
   top: 4.6rem;
   transform: translate(-51.5%);
@@ -38,7 +38,8 @@ body {
 }
 
 .PO {
-  margin: 0 auto;
+  margin: 5rem auto;
+  margin-bottom: 1rem;
   width: 37.4rem;
   height: 32.4rem;
   background-image: url(image/Simulador.png);
@@ -48,16 +49,19 @@ body {
   height: 8rem;
   resize: none;
 }
-.preenchimento, .comandos{
+.preenchimento, .comandos,#checklist{
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
   margin: 1rem 0rem;
 }
-.preenchimento input{
+.preenchimento .comandos input{
   width: 15rem;
   font-family: 'Courier New', Courier, monospace ;
+}
+#btnAddModelo{
+  padding: 0rem 0.5rem;
 }
 .preenchimento input[type=number] {
   margin-left: 1rem;
@@ -67,6 +71,35 @@ body {
   height: 2.5rem;
 }
 .content-left,.content-right{
-  width: 25rem;
+  width: 27rem;
   text-align: left;
+}
+#novoModelo{
+  width: 15rem;
+}
+#modelo{
+  margin-left: 9rem;
+}
+.miniPO{
+  width: 25rem;
+  height: 21.7rem;
+  background-image: url(image/Simulador.png);
+  background-size: contain;
+}
+.LCD{
+  text-align: left;
+  position: relative;
+  left: 50%;
+  top: 3.1rem;
+  transform: translate(-51.5%);
+  max-width: 21rem;
+  width: 14.1rem;
+  height: 5.4rem;
+  color: #fff;
+  font-family: Simulador;
+  padding: 0.22rem 0rem 0rem 0.8rem;
+  font-size: 0.85rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.18rem;
+  word-spacing: 0.38rem;
 }
