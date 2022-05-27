@@ -51,5 +51,10 @@
     miniaturaLCD.innerHTML = allcontent
     miniaturaPO.appendChild(miniaturaLCD)
     divChecklist.appendChild(miniaturaPO)
+
+    let LCD = document.getElementById('LCD')
+    LCD.innerHTML =""
+    let linha = document.querySelector("input")
+    linha1.value = ""
     }
   }
