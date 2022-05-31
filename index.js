@@ -16,6 +16,7 @@
   }
 
   function carregar() {
+    var combo = ""
     var input = document.querySelector('input[name=novoModelo]');
     var btn = document.querySelector('input[name=btnAddModelo]');
     var combo = document.querySelector('select[name=modelo]');
@@ -35,10 +36,14 @@
         }
       });
       if (retorno) {
-        var opt = document.createElement('option');
-        opt.value = input.value;
-        opt.innerHTML = input.value;
-        combo.appendChild(opt);
+        var opton = document.createElement('option');
+        var optoff = document.createElement('option');
+        optoff.value = input.value;
+        opton.value = input.value;
+        opton.innerHTML = input.value + ' - On';
+        optoff.innerHTML = input.value + ' - Off';
+        combo.appendChild(opton);
+        combo.appendChild(optoff);
         input.value = "";
       }
     });
@@ -47,6 +52,7 @@
   function adicionarpergunta() {
     if (allcontent == null || linha1.value == "") {
       alert("Digite uma pergunta começando da 1ª linha.")
+      return false
     } else {
       let divChecklist = document.getElementById('checklist')
       let miniaturaPO = document.createElement("div")
@@ -54,23 +60,23 @@
       var critica = document.createElement("span")
       var bloqueia = document.getElementById('bloqueia')
       let contador = document.createElement("p")
-      contador.setAttribute("id","contador")
+      contador.setAttribute("id", "contador")
       let posicaopergunta = divChecklist.children.length + 1
 
       miniaturaPO.setAttribute("class", "miniPO")
       miniaturaLCD.setAttribute("class", "LCD")
-      miniaturaLCD.innerHTML = allcontent
+      miniaturaLCD.innerHTML = allcontent + '<br>' + 'APERTE 1 PARA OK'
       contador.innerText = "Pergunta " + posicaopergunta
       miniaturaPO.appendChild(miniaturaLCD)
       divChecklist.appendChild(miniaturaPO)
       critica.setAttribute("id", "critica")
       miniaturaPO.appendChild(contador)
-      
+
       if (bloqueia.checked) {
         critica.innerHTML = "ATENÇÃO Pergunta CRÍTICA"
         miniaturaPO.appendChild(critica)
       }
-      
+
       let botaoremover = document.createElement("button")
       botaoremover.type = "button"
       botaoremover.innerText = "Remover Pergunta"
@@ -88,13 +94,6 @@
   function remover(button) {
     let checklistremover = button.parentNode
     document.getElementById("checklist").removeChild(checklistremover)
-
-    let divChecklist = document.getElementById('checklist')
-    let posicaopergunta = divChecklist.children.length
-
-    for (let index = 1; index < posicaopergunta; index++) {
-      document.getElementById("contador").innerHTML = "Posição " + index
-      
-    }
   }
+  /*var maquina = document.querySelector('input')*/
   
