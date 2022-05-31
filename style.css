@@ -85,6 +85,7 @@ body {
   height: 21.7rem;
   background-image: url(image/Simulador.png);
   background-size: contain;
+  background-repeat: no-repeat;
   margin-bottom: 8rem;
 }
 .LCD{
@@ -103,6 +104,7 @@ body {
   line-height: 1.25rem;
   letter-spacing: 0.18rem;
   word-spacing: 0.38rem;
+
 }
 .miniPO #critica{
   position: relative;

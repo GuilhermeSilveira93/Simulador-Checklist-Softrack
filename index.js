@@ -36,15 +36,18 @@
         }
       });
       if (retorno) {
-        var opton = document.createElement('option');
-        var optoff = document.createElement('option');
-        optoff.value = input.value;
-        opton.value = input.value;
-        opton.innerHTML = input.value + ' - On';
-        optoff.innerHTML = input.value + ' - Off';
-        combo.appendChild(opton);
-        combo.appendChild(optoff);
+        var opcao=[
+          opton = document.createElement('option'),
+          optoff = document.createElement('option')
+        ]
+        opcao[0].value = input.value;
+        opcao[1].value = input.value;
+        opcao[0].innerHTML = input.value + ' - On';
+        opcao[1].innerHTML = input.value + ' - Off';
+        combo.appendChild(opcao[0]);
+        combo.appendChild(opcao[1]);
         input.value = "";
+
       }
     });
   }
