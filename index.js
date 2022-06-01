@@ -16,10 +16,9 @@
   }
 
   function carregar() {
-    var combo = ""
     var input = document.querySelector('input[name=novoModelo]');
     var btn = document.querySelector('input[name=btnAddModelo]');
-    var combo = document.querySelector('select[name=modelo]');
+    combo = document.querySelector('select[name=modelo]');
     btn.addEventListener('click', function (e) {
       if (input.value == "") {
         alert("Informe um modelo.");
@@ -36,18 +35,18 @@
         }
       });
       if (retorno) {
-        var opcao=[
+
+        opcao = [
           opton = document.createElement('option'),
           optoff = document.createElement('option')
         ]
-        opcao[0].value = input.value;
-        opcao[1].value = input.value;
-        opcao[0].innerHTML = input.value + ' - On';
-        opcao[1].innerHTML = input.value + ' - Off';
+        opcao[1].value = input.value + '_ON';
+        opcao[0].value = input.value + '_OFF';
+        opcao[1].innerHTML = input.value + ' - On';
+        opcao[0].innerHTML = input.value + ' - Off';
         combo.appendChild(opcao[0]);
         combo.appendChild(opcao[1]);
         input.value = "";
-
       }
     });
   }
@@ -56,22 +55,37 @@
     if (allcontent == null || linha1.value == "") {
       alert("Digite uma pergunta começando da 1ª linha.")
       return false
+    } else if (combo.value == "0") {
+      alert('Selecione um Modelo.')
     } else {
-      let divChecklist = document.getElementById('checklist')
+
+      divChecklist = document.getElementById('checklist')
+      if (document.getElementById(combo.value) == null) {
+        novadiv = document.createElement('div')
+        novadiv.setAttribute('id', combo.value)
+        divChecklist.appendChild(novadiv)
+        tipomaquina = document.createElement('h1')
+        tipomaquina.setAttribute('id','maquina')
+        tipomaquina.innerHTML = combo.value
+        divChecklist.insertBefore(tipomaquina,novadiv)
+      }
+      novadiv = document.getElementById(combo.value)
       let miniaturaPO = document.createElement("div")
       let miniaturaLCD = document.createElement("div")
       var critica = document.createElement("span")
       var bloqueia = document.getElementById('bloqueia')
       let contador = document.createElement("p")
       contador.setAttribute("id", "contador")
-      let posicaopergunta = divChecklist.children.length + 1
+      let posicaopergunta = novadiv.children.length + 1
+
+      /*MUDAR A DIVCHECKLIST PARA RECEBER O VALOR DA OPCAO, DEPOIS CONCATENAR COM A PERGUNTA.*/
 
       miniaturaPO.setAttribute("class", "miniPO")
       miniaturaLCD.setAttribute("class", "LCD")
       miniaturaLCD.innerHTML = allcontent + '<br>' + 'APERTE 1 PARA OK'
       contador.innerText = "Pergunta " + posicaopergunta
       miniaturaPO.appendChild(miniaturaLCD)
-      divChecklist.appendChild(miniaturaPO)
+      novadiv.appendChild(miniaturaPO)
       critica.setAttribute("id", "critica")
       miniaturaPO.appendChild(contador)
 
@@ -79,7 +93,6 @@
         critica.innerHTML = "ATENÇÃO Pergunta CRÍTICA"
         miniaturaPO.appendChild(critica)
       }
-
       let botaoremover = document.createElement("button")
       botaoremover.type = "button"
       botaoremover.innerText = "Remover Pergunta"
@@ -95,8 +108,8 @@
   }
 
   function remover(button) {
-    let checklistremover = button.parentNode
-    document.getElementById("checklist").removeChild(checklistremover)
+    let miniaturaPOremover = button.parentNode
+    miniaturaPOremover.parentNode.removeChild(miniaturaPOremover)
+    /*
+        document.getElementById("checklist").removeChild(miniaturaPOremover)*/
   }
-  /*var maquina = document.querySelector('input')*/
-  
