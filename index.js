@@ -1,3 +1,4 @@
+/*PRIMEIRA PARTE, RECEBER DADOS--------------------------------------------------------------------------------------------------*/
   var allcontent = null
   var linha1 = ""
   var linha2 = ""
@@ -14,6 +15,8 @@
     linha3.value = linha3.value.replace(/[^0-9A-Za-z!%()_\-.,?\/ ]/g, "").toUpperCase(); /*TRATANDO IMPUT PARA PROIBIR CARACTERES ESPECIAIS.*/
     allcontent = LCD.innerHTML = linha1.value + '<br>' + linha2.value + '<br>' + linha3.value
   }
+/*PRIMEIRA PARTE, RECEBER DADOS--------------------------------------------------------------------------------------------------*/
+
 
   function carregar() {
     var input = document.querySelector('input[name=novoModelo]');
@@ -110,6 +113,4 @@
   function remover(button) {
     let miniaturaPOremover = button.parentNode
     miniaturaPOremover.parentNode.removeChild(miniaturaPOremover)
-    /*
-        document.getElementById("checklist").removeChild(miniaturaPOremover)*/
   }
