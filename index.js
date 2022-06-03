@@ -38,7 +38,6 @@ function carregar() {
       }
     });
     if (retorno) {
-
       opcao = [
         opton = document.createElement('option'),
         optoff = document.createElement('option')
@@ -61,7 +60,6 @@ function adicionarpergunta() {
   } else if (combo.value == "0") {
     alert('Selecione um Modelo.')
   } else {
-
     divChecklist = document.getElementById('checklist')
     if (document.getElementById(combo.value) == null) {
       novadiv = document.createElement('div')
