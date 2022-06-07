@@ -4,15 +4,14 @@ var linha1 = ""
 var linha2 = ""
 var linha3 = ""
 var LCD = ""
-
 function pergunta() {
   LCD = document.getElementById('LCD')
-  linha1 = document.querySelector("input[name='linha1']") /*Recebendo apeas o Imput, sem o valor*/
-  linha2 = document.querySelector("input[name='linha2']") /*Recebendo apeas o Imput, sem o valor*/
-  linha3 = document.querySelector("input[name='linha3']") /*Recebendo apeas o Imput, sem o valor*/
-  linha1.value = linha1.value.replace(/[^0-9A-Za-z!%()_\-.,?\/ ]/g, "").toUpperCase(); /*TRATANDO IMPUT PARA PROIBIR CARACTERES ESPECIAIS.*/
-  linha2.value = linha2.value.replace(/[^0-9A-Za-z!%()_\-.,?\/ ]/g, "").toUpperCase(); /*TRATANDO IMPUT PARA PROIBIR CARACTERES ESPECIAIS.*/
-  linha3.value = linha3.value.replace(/[^0-9A-Za-z!%()_\-.,?\/ ]/g, "").toUpperCase(); /*TRATANDO IMPUT PARA PROIBIR CARACTERES ESPECIAIS.*/
+  linha1 = document.querySelector("input[name='linha1']")
+  linha2 = document.querySelector("input[name='linha2']")
+  linha3 = document.querySelector("input[name='linha3']")
+  linha1.value = linha1.value.replace(/[^0-9A-Za-z!%()_\-.,?\/ ]/g, "").toUpperCase();
+  linha2.value = linha2.value.replace(/[^0-9A-Za-z!%()_\-.,?\/ ]/g, "").toUpperCase();
+  linha3.value = linha3.value.replace(/[^0-9A-Za-z!%()_\-.,?\/ ]/g, "").toUpperCase(); 
   allcontent = LCD.innerHTML = linha1.value + '<br>' + linha2.value + '<br>' + linha3.value
 }
 /*PRIMEIRA PARTE, RECEBER DADOS--------------------------------------------------------------------------------------------------*/
