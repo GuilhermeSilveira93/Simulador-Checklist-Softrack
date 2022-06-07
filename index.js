@@ -77,7 +77,6 @@ function adicionarpergunta() {
     let contador = document.createElement("p")
     contador.setAttribute("id", "contador")
     let posicaopergunta = novadiv.children.length + 1
-
     miniaturaPO.setAttribute("class", "miniPO")
     miniaturaLCD.setAttribute("class", "LCD")
     miniaturaLCD.innerHTML = allcontent + '<br>' + 'APERTE 1 PARA OK'
@@ -87,7 +86,7 @@ function adicionarpergunta() {
     critica.setAttribute("id", "critica")
     miniaturaPO.appendChild(contador)
 
-    if (bloqueia.checked) {
+      if (bloqueia.checked) {
       critica.innerHTML = "ATENÇÃO Pergunta CRÍTICA"
       miniaturaPO.appendChild(critica)
     }
@@ -109,3 +108,6 @@ function remover(button) {
   let miniaturaPOremover = button.parentNode
   miniaturaPOremover.parentNode.removeChild(miniaturaPOremover)
 }
+
+
+rmc
