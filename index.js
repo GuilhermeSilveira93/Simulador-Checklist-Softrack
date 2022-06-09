@@ -43,8 +43,8 @@ function carregar() {
       ]
       opcao[1].value = 'Perguntas Checklist ' + input.value.toUpperCase() + ' MODO ON';
       opcao[0].value = 'Perguntas Checklist ' + input.value.toUpperCase() + ' MODO OFF';
-      opcao[1].innerHTML = input.value + ' - On';
-      opcao[0].innerHTML = input.value + ' - Off';
+      opcao[1].innerHTML = input.value.toUpperCase() + ' - On';
+      opcao[0].innerHTML = input.value.toUpperCase() + ' - Off';
       combo.appendChild(opcao[0]);
       combo.appendChild(opcao[1]);
       input.value = "";
@@ -108,6 +108,3 @@ function remover(button) {
   let miniaturaPOremover = button.parentNode
   miniaturaPOremover.parentNode.removeChild(miniaturaPOremover)
 }
-
-
-rmc
