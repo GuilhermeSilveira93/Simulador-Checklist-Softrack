@@ -76,6 +76,7 @@ function adicionarpergunta() {
     var bloqueia = document.getElementById('bloqueia')
     let contador = document.createElement("p")
     contador.setAttribute("id", "contador")
+
     let posicaopergunta = novadiv.children.length + 1
     miniaturaPO.setAttribute("class", "miniPO")
     miniaturaLCD.setAttribute("class", "LCD")
@@ -107,4 +108,11 @@ function adicionarpergunta() {
 function remover(button) {
   let miniaturaPOremover = button.parentNode
   miniaturaPOremover.parentNode.removeChild(miniaturaPOremover)
+
+  novaposicao = document.querySelectorAll('div[class=miniPO').length
+  for (let index = 0; index < novaposicao; index++) {
+    const element = novaposicao[index];
+    contador.innerText = "Pergunta " + element
+    console.log(element)
+  }
 }
