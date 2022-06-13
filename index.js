@@ -43,8 +43,8 @@ function carregar() {
       ]
       opcao[1].value = 'Perguntas Checklist ' + input.value.toUpperCase() + ' MODO ON';
       opcao[0].value = 'Perguntas Checklist ' + input.value.toUpperCase() + ' MODO OFF';
-      opcao[1].innerHTML = input.value.toUpperCase() + ' - On';
-      opcao[0].innerHTML = input.value.toUpperCase() + ' - Off';
+      opcao[1].innerHTML = `${input.value.toUpperCase()} - On`
+      opcao[0].innerHTML = `${input.value.toUpperCase()} - Off`
       combo.appendChild(opcao[0]);
       combo.appendChild(opcao[1]);
       input.value = "";
@@ -80,7 +80,7 @@ function adicionarpergunta() {
     let posicaopergunta = novadiv.children.length + 1
     miniaturaPO.setAttribute("class", "miniPO")
     miniaturaLCD.setAttribute("class", "LCD")
-    miniaturaLCD.innerHTML = allcontent + '<br>' + 'APERTE 1 PARA OK'
+    miniaturaLCD.innerHTML = `${allcontent} <br> APERTE 1 PARA OK`
     contador.innerText = "Pergunta " + posicaopergunta
     miniaturaPO.appendChild(miniaturaLCD)
     novadiv.appendChild(miniaturaPO)
