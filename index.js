@@ -108,11 +108,4 @@ function adicionarpergunta() {
 function remover(button) {
   let miniaturaPOremover = button.parentNode
   miniaturaPOremover.parentNode.removeChild(miniaturaPOremover)
-
-  novaposicao = document.querySelectorAll('div[class=miniPO').length
-  for (let index = 0; index < novaposicao; index++) {
-    const element = novaposicao[index];
-    contador.innerText = "Pergunta " + element
-    console.log(element)
-  }
 }
