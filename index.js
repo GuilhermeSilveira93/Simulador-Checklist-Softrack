@@ -16,7 +16,6 @@ function pergunta() {
 }
 /*PRIMEIRA PARTE, RECEBER DADOS--------------------------------------------------------------------------------------------------*/
 
-
 function carregar() {
   var input = document.querySelector('input[name=novoModelo]');
   var btn = document.querySelector('input[name=btnAddModelo]');
