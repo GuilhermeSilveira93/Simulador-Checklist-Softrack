@@ -76,7 +76,7 @@ function adicionarpergunta() {
     let contador = document.createElement("p")
     contador.setAttribute("id", "contador")
 
-    let posicaopergunta = novadiv.children.length + 1
+    posicaopergunta = novadiv.children.length + 1
     miniaturaPO.setAttribute("class", "miniPO")
     miniaturaLCD.setAttribute("class", "LCD")
     miniaturaLCD.innerHTML = `${allcontent} <br> APERTE 1 PARA OK`
@@ -107,4 +107,6 @@ function adicionarpergunta() {
 function remover(button) {
   let miniaturaPOremover = button.parentNode
   miniaturaPOremover.parentNode.removeChild(miniaturaPOremover)
+  posicaopergunta = novadiv.children.length + 1
+
 }
